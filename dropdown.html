@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timetable Management System</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    // Define subjects and options for dropdown
+    const subjects = [
+      "Subject 1",
+      "Subject 2",
+      "Subject 3",
+      // ... Add more subjects
+    ];
+
+    // Create dropdown
+    const dropdown = document.createElement("select");
+    dropdown.innerHTML = subjects.map((subject, index) => `<option value="${index}">${subject}</option>`).join('');
+
+    // Create table with headers
+    const table = document.createElement("table");
+    const tableHeaders = ["Time", "Day", "Section 21", "Section 22", "Section 23", "Section 24", "Section 25", "Section 26", "Section 27", "Section 28", "Section 29", "Section 30"];
+    const tableHeaderRow = document.createElement("tr");
+    tableHeaders.forEach(header => {
+      const th = document.createElement("th");
+      th.textContent = header;
+      tableHeaderRow.appendChild(th);
+    });
+    table.appendChild(tableHeaderRow);
+
+    document.getElementById("root").appendChild(dropdown);
+    document.getElementById("root").appendChild(table);
+  </script>
+</body>
+</html>
